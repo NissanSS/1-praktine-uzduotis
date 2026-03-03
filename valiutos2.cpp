@@ -11,12 +11,12 @@ struct Rates {
     double pirkti;
     double parduoti;
 };
-
+//istrina viska kas liko ivedimo eiluteje iki enter ('\n')
 void clearInput() {
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
-
+// leidzia ivesti valiutas mazosiomis raidemis.
 string toUpper(string s) {
     for (char &c : s) c = static_cast<char>(toupper(static_cast<unsigned char>(c)));
     return s;
@@ -58,7 +58,8 @@ int main() {
             }
             break;
         }
-
+         //nustatome pora su EUR
+        // nonEur = valiuta kuri nera EUR (su ja vyksta visi veiksmai pries EUR)
         
         string nonEur;
         Rates r{};
@@ -82,7 +83,7 @@ int main() {
             }
             r = getRates(nonEur);
         } else {
-            
+            // jei pirma ne EUR, visi veiksmai tik su EUR
             nonEur = first;
             r = getRates(nonEur);
             cout << "Pasirinkai " << nonEur << ". Visi veiksmai bus tik su EUR."<<endl;
@@ -160,7 +161,7 @@ int main() {
             cout << "Pardaves " << amount << " " << nonEur << " gausi " << result << " EUR "<<endl;
         }
 
-        
+        // uzklausa ar testi?
         while (true) {
             cout << "Ar testi? (t/n): ";
             string ans;
