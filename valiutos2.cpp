@@ -11,7 +11,7 @@ struct Rates {
     double pirkti;
     double parduoti;
 };
-//istrina viska kas liko ivedimo eiluteje iki enter ('\n')
+//istrina viska kas liko ivedimo eiluteje iki  enter ('\n')
 void clearInput() {
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
